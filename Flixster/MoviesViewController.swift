@@ -52,16 +52,19 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier:"MovieCell") as! MovieCell
         
         let movie = movies[indexPath.row]
+        
+        //set up title and synopsis for every movie
         let title = movie["title"] as! String
         cell.titleLabel?.text = title
         let synopsis = movie["overview"] as! String
         cell.synopsisLabel?.text = synopsis
         
+        
+        //get poster for every movie
         let baseURL = "https://image.tmdb.org/t/p/w185"
         let posterPath = movie["poster_path"] as! String
         let posterURL = URL(string: baseURL + posterPath)
         
-        print(posterPath)
         cell.posterImage.af.setImage(withURL: posterURL!)
         
         return cell
