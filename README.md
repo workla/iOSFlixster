@@ -27,6 +27,12 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 **Showing Constraints in Action to resize everything when screen is rotated**<br>
 <img src="http://g.recordit.co/drE0mxqR1L.gif"><br>
 
+**Showing Constraints in Action to resize everything on iPad**<br>
+<img src="http://g.recordit.co/MDhJUQaW51.gif"><br>
+
+**Showing Constraints in Action to resize everything on iPhone 8**<br>
+<img src="http://g.recordit.co/FbIYPeuEAd.gif"><br>
+
 ### Notes
 
 I think what made this app slightly easier for me was that I have previously taken Codepath's Android course and so I was used to constraints and the idea of recycling views for a list of unknown size.
