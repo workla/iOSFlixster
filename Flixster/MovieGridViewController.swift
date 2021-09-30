@@ -19,6 +19,17 @@ class MovieGridViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        //set up grid spacing
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing*2)/3
+        layout.itemSize = CGSize(width: width, height: width*3/2)
+        
+        
+        //get poster info for movies related to wonder woman movie id 297762
         let url = URL(string: "https://api.themoviedb.org/3/movie/297762/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -58,15 +69,17 @@ class MovieGridViewController: UIViewController, UICollectionViewDelegate, UICol
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        //get clicked movie
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)!
+        let movie = movies[indexPath.item]
+        
+        //pass info to details view controller
+        let detailViewController = segue.destination as! MovieDetailsViewController
+        detailViewController.movie = movie
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
-    */
 
 }
