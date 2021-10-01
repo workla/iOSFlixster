@@ -247,11 +247,27 @@
                         <outlet property="posterView" destination="TPf-dW-ajM" id="ase-lF-LRM"/>
                         <outlet property="synopsisLabel" destination="2N0-xV-C45" id="qSy-kD-0Xb"/>
                         <outlet property="titleLabel" destination="gg5-2u-SLz" id="M2x-jZ-c2n"/>
+                        <segue destination="jeD-a2-keN" kind="presentation" identifier="trailerSegue" id="o0i-8r-M9l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHD-hW-jA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.8695652173915" y="69.642857142857139"/>
+        </scene>
+        <!--Trailer View Controller-->
+        <scene sceneID="VV5-zE-Lwc">
+            <objects>
+                <viewController id="jeD-a2-keN" customClass="TrailerViewController" customModule="Flixster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iue-2d-rpn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Jq9-Hz-d2p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mvi-6O-jS7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2596" y="70"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="jNa-A5-wMk">
